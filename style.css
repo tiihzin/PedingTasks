@@ -43,13 +43,13 @@ body {
 /* Configurações de Texto*/
 
 .title-header{
-    font-size: 18px;
+    font-size: 20px;
     display: flex; 
     flex-direction: column;
 }
 
 .title-section{
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: 8px;
 }
@@ -74,7 +74,7 @@ body {
     font-weight: 700;
 }
 .button-text{
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     color: #fff;
 }
@@ -83,7 +83,7 @@ body {
 }
 
 .paragrapher{
-    font-size: 13px;
+    font-size: 15px;
     color: #8B8B8B;
 }
 
