@@ -11,7 +11,7 @@
 
 <body style="background-color: #F7F7F7; min-height: 100vh;display: flex;justify-content: center; margin-bottom: 50px;">
     <div class="body-style" style="max-width: 500px;">
-            
+           
                 <div class="Login-header">
             <div style="display: flex; flex-direction: row; align-items: center;">
                 <div class="title-header">
@@ -43,43 +43,33 @@
                 </div>
 
                 <div style="display: flex; flex-direction: row;">
-
+                        
                     <div class="login-div" style="margin-right: 16px">
                         <span class="title-section">Entrega</span>
-                        <input type="datetime-local" class= "input-data" required min="today" max="2023-12-31" placeholder="20/02/2023">
+                        <input type="date" class= "input-data" required min="today" max="2023-12-31" placeholder="20/02/2023">
                     </div>
 
                     <div class="login-div" >
-                        <span class="title-section">Prioridade</span>
-                        <label for="select" class="label" style="left: auto; top: 43px; right: 10px; padding: 0px 6px ;"><img src="droplist.svg" alt="Ver Senha"></label>
-                        <input type="text" name="prioridade" id="iprioridade" class="input-text no-icon select" placeholder="Escolha a Prioridade"  onfocus="droplist(0)" onblur="droplist(1)">
-                        
-                        <div class="droplist">
-                            <div class="list">
-                                <div class="itenlist" onmousedown="category(1)"><span class="priority basico right"></span><span id="item-1">Básico</span></div>
-                                <div class="itenlist" onmousedown="category(2)"> <span class="priority intermediario right"></span><span id="item-2">Intermediário</span></div>
-                                <div class="itenlist" onmousedown="category(3)"><span class="priority urgente right"></span> <span id="item-3">Urgente</span></div>
-                            </div>
-                        </div>
+                        <span class="title-section">Horário</span>
+                        <input type="time" name="materia" class= "input-text no-icon" required placeholder="Nivel de Prioridade" list="listprior">
                     </div>
-                    <script>
+                </div>
 
-                        function category(c){
-                            var itenlist = document.getElementById('item-'+c).innerHTML;
-                            document.getElementById('iprioridade').value= itenlist
-                        }
-                        function droplist(p){
-                            var e = document.getElementsByClassName('droplist')[0];
-                            var d = ['block','none'];
-                            e.style.display = d[p]
-                        }
-                    </script>
-                    
-                </div>
-                <div class="login-div" style="margin-top: 0px;">
-                    <label for="input" class="label" style="top: 36px; left: auto; right: 145px;"><img src="Seta (Entrar).svg" alt="Entrar Agora"></label>
-                    <input type="submit" class="input-submit" src="dashboard.html" value="Criar Tarefa"> 
-                </div>
+                <div class="login-div" >
+                    <span class="title-section">Prioridade</span>
+                <select name="materia" class= "input-text no-icon" required placeholder="Nivel de Prioridade" list="listprior">
+                <datalist id="listprior">
+                    <option selected id="list-1" value="Básico">Básico (Azul)</option>
+                    <option id="list-2" value="Intermediário"> Intermediário (Amarelo)</option>
+                    <option id="list-3" value="Urgente"> Urgente (Vermelho)</option>
+                </datalist></select>
+                
+            </div>
+            
+                <a href="dashboard.html" class="login-div" style="margin-top: 0px;">
+                    <label for="input" class="label" style="top: 0px; left: auto; margin-left: 250px;"><img src="Seta (Entrar).svg" alt="Entrar Agora"></label>
+                    <input type="submit" class="input-submit"  value="Criar Tarefa"> 
+                </a>
             </form>
             
             
