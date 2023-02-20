@@ -237,7 +237,8 @@ textarea::-webkit-scrollbar-thumb{
     margin: 8px 0px;
     border: none;
     outline: none;
-    width: 350px;
+    width: 100%;
+    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     color: #8B8B8B;
     font-size: 13px; 
@@ -246,7 +247,8 @@ textarea::-webkit-scrollbar-thumb{
 
 .no-icon{
     padding-left: 16px;
-    width: 365px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .descripition{
@@ -282,7 +284,8 @@ textarea::-webkit-scrollbar-thumb{
     border-radius: 10px; 
     margin: 8px 0px;
     border: none;
-    width: 160px;
+    width: 100%;
+    box-sizing: border-box;
     cursor: text;
     outline: none;
     font-family: 'Montserrat', sans-serif;
@@ -322,7 +325,8 @@ input[type="datetime-local"]:hover,:focus{
     border-radius: 10px; 
     margin: 8px 0px;
     border: none;
-    max-width: 168px;
+    max-width: 100%;
+    box-sizing: border-box;
     outline: none;
     font-family: 'Montserrat', sans-serif;
     color: #8B8B8B;
