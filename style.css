@@ -17,6 +17,11 @@ body {
     flex-direction: column;
 }
 
+.rotate {
+    transform: rotate(-90deg);
+    transition: transform 0.1s ease;
+}
+
 /*Cabeçalho Dashboard*/
 .dashboard-header{
     display: flex;
@@ -57,13 +62,13 @@ textarea::-webkit-scrollbar-thumb{
 
 ::-webkit-scrollbar{
     background-color: #f7f7f7;
-    width: 5px;
+    width: 0px;
     cursor: pointer;
     border-top-left-radius: 10px;
 }
 ::-webkit-scrollbar-thumb{
     background-color: #cccccc;
-    width: 15px;
+    width: 0px;
     border-radius: 10px;
 }
 
@@ -80,6 +85,10 @@ textarea::-webkit-scrollbar-thumb{
     font-weight: 700;
     margin-bottom: 8px;
 }
+.drop{
+    margin-bottom: 0px;
+}
+
 
 .bold{ 
     font-weight: 700;
@@ -176,6 +185,17 @@ textarea::-webkit-scrollbar-thumb{
 .task-date{
     margin-left: 8px;
 }
+
+.drop-task {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.drop-task-visible {
+    max-height: 1000px; /* ou qualquer valor suficientemente grande */
+}
+
 
 .priority{
     display: flex; 
