@@ -67,12 +67,12 @@
 
             <!--Tasks Pendentes (Dropdonw)-->
             <div class="pendente-task task-div">
-                <div class="drop-title" style="display: flex; align-items: center; justify-content: space-between; ">
+                <div class="drop-title" id="droptitle-1">
                     <span class="title-section drop">Tarefas Pendentes: ##</span>
                     <span id="dropimg-1" class="subtitle bold">Ver Tarefas <img id="rotateimg-1" src="Drop.svg" alt="Ver Tarefas"></span>
                 </div>
 
-                <div class="drop-task" id="droptask-1">
+                <div class="drop-task " id="droptask-1">
                     <div class="task" id="task-id">
 
                         <div class="task-name"> 
@@ -120,7 +120,7 @@
                 
             <!--Tasks Concluidas (Dropdonw)-->
             <div class="concluded-task task-div">
-                <div class="drop-title" style="display: flex; align-items: center; justify-content: space-between; ">
+                <div class="drop-title" id="droptitle-2">
                     <span class="title-section drop">Tarefas Concluídas: ##</span>
                     <span id="dropimg-2" class="subtitle bold">Ver Tarefas <img id="rotateimg-2" src="Drop.svg" alt="Ver Tarefas"></span>
                 </div>
@@ -208,21 +208,21 @@
 
     <!--Scripts Drop Tasks-->
     <script>
-        const dropimg1 = document.getElementById('dropimg-1');
+        const droptitle1 = document.getElementById('droptitle-1');
     const dropTask1 = document.getElementById('droptask-1');
     const rotateimg1 = document.getElementById('rotateimg-1');
 
-    dropimg1.addEventListener('click', () => {
+    droptitle1.addEventListener('click', () => {
     dropTask1.classList.toggle('drop-task-visible');
     rotateimg1.classList.toggle('rotate')
     });
 
-        const dropimg2 = document.getElementById('dropimg-2');
+        const droptitle2 = document.getElementById('droptitle-2');
     const dropTask2 = document.getElementById('droptask-2');
     const rotateimg2 = document.getElementById('rotateimg-2');
     
 
-    dropimg2.addEventListener('click', () => {
+    droptitle2.addEventListener('click', () => {
     dropTask2.classList.toggle('drop-task-visible');
     rotateimg2.classList.toggle('rotate')
     });
