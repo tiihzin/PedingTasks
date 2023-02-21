@@ -45,15 +45,21 @@
                     </div>
                     
 
-                <div class="login-div" id="isenha">
+                    <div class="login-div" id="isenha">
+                        <span class="title-section">Senha</span>
 
-                    <span class="title-section">Senha</span>
-                    <label for="input" class="label" style="top: 44px;"><img src="Chave.svg" alt="Senha"></label>
+                        <label for="input" class="label" style="top: 42px;"><img src="Chave.svg" alt="Senha"></label>
 
-                    <label for="input" class="label" style="left: auto; right: 10px; padding: 0px 6px ;"><img src="Olho  ( Desabilitado).svg" alt="Ver Senha"></label>
+                        <label for="input" class="label" style="left: auto; top: 44px; right: 10px; padding: 0px 6px ;"><img id="ver" src="Olho  ( Desabilitado).svg" alt="Ver Senha"></label>
 
-                    <input type="password" name="senha" class= "input-text" required placeholder="Digite sua senha">
-                    </div>
+                        <label for="input" class="label" style="left: auto; top: 44px; right: 10px; padding: 0px 6px ;"><img id="esc" src="Olho (habilitado).svg" style="display: none;" alt="Ver Senha"></label>
+
+                        <input type="password" name="senha" class="senha input-text" minlength="6" maxlength="14" required placeholder="Digite sua senha">
+                        <span class="subtitle">Sua senha deve conter no minimo 6 Caractéres</br></span>
+
+                      </div>
+                      
+                      
                 
                 <div class="login-div" id="isub" style="margin-top: 0px;">
 
@@ -70,6 +76,8 @@
         </div>
             
         </div>
-    </div>     
+    </div>
+    
+    <script src="scripts.js"></script>
 </body>
 </html>
