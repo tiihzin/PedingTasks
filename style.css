@@ -196,6 +196,12 @@ textarea::-webkit-scrollbar-thumb{
     max-height: 1000px; /* ou qualquer valor suficientemente grande */
 }
 
+.drop-title{
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    cursor: pointer; 
+}
 
 .priority{
     display: flex; 
