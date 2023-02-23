@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Expandida</title>
+
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #1D1D1D;
+            font-weight: 500;
+            background-color: #F7F7F7;
+            
+        }
+
+        /*Configurações de Corpo*/
+        .body-style{
+            margin: 60px 30px 30px 30px;
+        } 
+
+
+
+        .dashboard-body{
+            display: flex; 
+            flex-direction: column;
+        }
+
+
+        .title-section{
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .drop{
+            margin-bottom: 0px;
+        }
+
+
+        .bold{ 
+            font-weight: 700;
+            color: #1d1d1d;
+        }
+        .extrabold{
+            font-weight: 800;
+            color: #1d1d1d;
+            text-decoration: none;
+        }
+
+        .subtitle{ 
+            color: #8B8B8B;
+            font-size: 12px; 
+            font-weight: 500;
+        }
+        .subtitle-bold{
+            color: #8B8B8B;
+            font-size: 12px; 
+            font-weight: 700;
+        }
+        .button-text{
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .disable{
+            color: #8B8B8B;
+        }
+
+        .paragrapher{
+            font-size: 12px;
+            color: #8B8B8B;
+        }
+
+        .link{
+            color: #1D1D1D;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .link:hover{
+            color: #000000;
+        }
+
+        .link:focus{
+            color: #000000;
+        }
+
+        .task{
+            background-color: #fff; 
+            padding: 16px 14px; 
+            border-radius: 10px;
+            border: 1px solid #d3d3d3;
+            display: flex; 
+            flex-direction: column;
+            margin: 8px 0px;
+            transition: height 0.5s;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .task-header{
+            display: flex; 
+            flex-direction: row; 
+            justify-content: space-between;
+        }
+
+        .task.expandida {
+            max-height: 200px;
+            transition: height 0.5s;
+        }
+
+        .task-div{
+            margin-bottom: 32px;
+        }
+
+        .task-name{
+            display: flex; 
+            flex-direction: column;
+        }
+
+        .task-title{
+            font-size: 13px;
+            font-weight: 700;
+            overflow: auto;
+            max-height: 16px;
+            max-width: 300px;
+            overflow: hidden;
+            transition: height 0.5s;
+            
+        }
+
+        .task-title.expandida{
+            max-height: 100px;
+            transition: height 0.5s;
+        }
+
+        .task-materia{
+            margin-top: 3px;
+        }
+
+        .task-date{
+            margin-left: 8px;
+        }
+
+        .data-div{
+            display: flex; 
+            margin-top: 10px ;
+            align-items: center;
+        }
+        .description{
+            display: none;
+            
+        }
+
+        .description.block{
+            display: block; 
+            margin-top: 16px;
+        }
+        
+        .drop-task {
+            max-height: 0px;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .drop-title{
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            cursor: pointer; 
+        }
+
+        .drop-task-visible {
+            max-height: 1000px; 
+        }
+
+        .drop-actions{
+            display: none;
+        }
+
+        .drop-actions.block{
+            display:flex; 
+            justify-content: center; 
+            margin-top: 16px; 
+            align-items: center;
+        }
+
+        .priority{
+            display: flex; 
+            border-radius: 20px; 
+            margin-left: 8px; 
+            width: 8px; 
+            height: 8px; 
+            float: right;
+        }
+
+        .priority.none{
+            display: none; 
+            transition: max-height 0.5s ease;
+        }
+
+
+        .right{
+            margin-right: 8px;
+            margin-left: 16px;
+        }
+
+        .urgente{
+            background-color: #FF5858;
+        }
+        .intermediario{
+            background-color: #F8D351;
+        }
+        .basico{
+            background-color: #3879C1;
+        }
+        .concluido{
+            background-color: #2BB673;
+            
+            padding: 4px;
+        }
+
+        /*Configurações de Botão*/
+
+        .button-small{
+            display: block;
+            max-width: 125px;
+            align-items: center;
+            padding: 8px 12px;
+            background-color: #2BB673;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+        }
+        .button-small:hover,:focus{
+            background-color: #23a064;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body-style" >
+                
+        <div class="dashboard-body" style="display: flex; flex-direction: column;">
+
+            <!--Tasks Urgentes-->
+            <div class="task" id="itask" onclick="expandirDiv()">
+                <div class="task-header">
+                    <div class="task-name"> 
+                        <span class="task-title" id="itaskTitle">Isso é uma atividade de teste para saber se funciona, então vamos testar</span>
+                        <span class="subtitle task-materia"> Desenvolvimento de Sistemas</span>
+                    </div>
+                    <div>
+                        <div class="data-div">
+                            <span class="subtitle task-date">AMANHÃ <span class="bold" style="margin-left: 3px;">08:40</span></span>
+                        <span class="priority urgente"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="description subtitle"> 
+                    <span class="bold">Descrição: </span>
+                    <span id="idesc">Aqui é a descrição da TASK E TUDO MAIS Aqui é a descrição da TASK E TUDO MAIS Aqui é a descrição da TASK E TUDO MAIS...</span>
+                </div>
+                    
+                <div>
+
+                </div>
+                    <div class="drop-actions">
+                        <div class="button-small button-text">Marcar como Concluida
+                        </div>
+                        <div style="margin-left: 16px; display: flex; align-items: center;">
+                            <img src="src/Lapis (Editar Atividade).svg" alt="">
+                            <span class="subtitle-bold" style="margin-left: 8px;"> Editar Atividade</span>
+                        </div>
+                    </div>
+            </div>
+            
+
+            <script>
+                function expandirDiv() {
+                    var task = document.getElementById("itask");
+                    task.classList.toggle("expandida");
+  
+                    var taskTitle = document.getElementById("itaskTitle");
+                    taskTitle.classList.toggle("expandida");
+
+                    var descDiv = document.getElementsByClassName("description")[0];
+                    descDiv.classList.toggle("block");
+
+                    var action = document.getElementsByClassName("drop-actions")[0];
+                    action.classList.toggle("block");
+                }
+            </script>
+
+</body>
+</html>
